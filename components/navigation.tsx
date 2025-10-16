@@ -3,26 +3,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-slate-900/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex items-center gap-2">
@@ -74,7 +61,7 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 space-y-4 bg-slate-900/95 backdrop-blur-md -mx-6 px-6">
+          <div className="lg:hidden py-6 space-y-4 bg-primary/95 backdrop-blur-md -mx-6 px-6">
             <Link
               href="#services"
               className="block text-white/90 hover:text-white transition-colors font-medium py-3 text-sm tracking-wide uppercase"
