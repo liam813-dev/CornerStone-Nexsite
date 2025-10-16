@@ -1,6 +1,6 @@
 "use client"
 
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 const locations = [
@@ -38,7 +38,7 @@ const stats = [
 
 export function WhereWeWork() {
   return (
-    <section id="where-we-work" className="py-24 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
+    <section id="where-we-work" className="relative overflow-hidden bg-slate-900 py-24 text-white lg:py-32 scroll-mt-[6.5rem]">
       <div className="container mx-auto px-6 lg:px-12 relative">
         <ScrollReveal className="mb-16" direction="up">
           <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">

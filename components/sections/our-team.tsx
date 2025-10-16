@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -40,7 +40,7 @@ export function OurTeam() {
   const currentMember = teamMembers[currentIndex]
 
   return (
-    <section id="our-team" className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section id="our-team" className="relative overflow-hidden bg-muted/30 py-24 lg:py-32 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10" />
 

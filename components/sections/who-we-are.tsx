@@ -1,6 +1,6 @@
 "use client"
 
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
 
 const stats = [
@@ -11,7 +11,7 @@ const stats = [
 
 export function WhoWeAre() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section id="about" className="relative overflow-hidden bg-muted/30 py-24 lg:py-32 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10" />
 

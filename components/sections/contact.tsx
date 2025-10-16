@@ -1,6 +1,6 @@
 "use client"
 
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -8,7 +8,7 @@ import { Mail, MapPin, Phone } from "lucide-react"
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-primary text-white relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden bg-primary py-24 text-white lg:py-32 scroll-mt-[6.5rem]">
       {/* Geometric background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 transform rotate-45 translate-x-48 -translate-y-48" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 transform rotate-45 -translate-x-48 translate-y-48" />

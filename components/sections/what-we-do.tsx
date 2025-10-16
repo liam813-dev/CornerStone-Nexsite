@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -20,7 +20,7 @@ const content = {
     title: "Multi-stage waterproofing that stays dry",
     description:
       "Our interior and exterior waterproofing systems eliminate leaks at the source with proper excavation, drainage board, and weeping tile replacement. Every project includes sump pump and window well solutions as needed, plus a 20-year transferable warranty on the treated areas.",
-    image: "/construction-site-with-crane-and-workers.jpg",
+    image: "/Waterproofing-services.webp",
   },
   underpinning: {
     title: "Gain headroom with expert underpinning",
@@ -64,7 +64,7 @@ export function WhatWeDo() {
   const [activeTab, setActiveTab] = useState("waterproofing")
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="services" className="relative overflow-hidden bg-background py-24 lg:py-32 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 transform rotate-45 translate-x-32 -translate-y-32" />
 

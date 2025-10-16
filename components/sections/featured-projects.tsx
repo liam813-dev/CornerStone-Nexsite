@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -47,7 +47,7 @@ export function FeaturedProjects() {
   const [activeCategory, setActiveCategory] = useState("waterproofing")
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="projects" className="relative overflow-hidden bg-background py-24 lg:py-32 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 transform -translate-y-48 translate-x-48" />
 
