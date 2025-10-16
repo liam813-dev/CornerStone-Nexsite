@@ -1,3 +1,6 @@
+"use client"
+
+import { ScrollReveal } from "@/components/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -18,39 +21,58 @@ export function Hero() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl">
             {/* Eyebrow text with horizontal line accent */}
-            <div className="flex items-center gap-4 mb-6 animate-fade-in">
+            <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="down">
               <div className="w-16 h-[2px] bg-secondary" />
               <span className="text-white/90 font-light tracking-[0.25em] text-[10px] uppercase">
-                Premium Construction Services
+                Toronto Waterproofing & Foundation Experts
               </span>
-            </div>
+            </ScrollReveal>
 
-            <h1 className="text-white font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-6 tracking-tight animate-fade-in-up text-balance">
-              Building Excellence From The Ground Up
-            </h1>
+            <ScrollReveal
+              as="h1"
+              className="text-white font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-6 tracking-tight text-balance"
+              direction="up"
+              delay={80}
+            >
+              Protecting Homes From The Ground Up
+            </ScrollReveal>
 
-            <p className="text-white/85 text-base md:text-lg max-w-2xl mb-10 font-light leading-relaxed animate-fade-in-up animation-delay-200">
-              Transforming visions into architectural masterpieces with unparalleled craftsmanship and innovative design
-              solutions
-            </p>
+            <ScrollReveal
+              as="p"
+              className="text-white/85 text-base md:text-lg max-w-2xl mb-10 font-light leading-relaxed"
+              direction="up"
+              delay={160}
+            >
+              Cornerstone Waterproofing delivers 20-year warranted waterproofing, underpinning, and foundation repair that
+              keeps GTA basements dry and transforms them into livable space.
+            </ScrollReveal>
 
             {/* CTA buttons - left aligned */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
+            <ScrollReveal
+              as="div"
+              className="flex flex-col sm:flex-row gap-4"
+              direction="up"
+              delay={240}
+            >
               <Button
+                asChild
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-white font-medium tracking-wide uppercase text-sm px-10 py-6 group"
               >
-                View Our Work
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <a href="tel:14168794593">
+                  Call 416-879-4593
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-primary font-medium tracking-wide uppercase text-sm px-10 py-6 bg-transparent"
               >
-                Get A Quote
+                <a href="#contact">Request A Free Estimate</a>
               </Button>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

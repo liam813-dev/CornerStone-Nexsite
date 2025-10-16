@@ -1,27 +1,28 @@
 "use client"
 
 import { useState } from "react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const teamMembers = [
   {
-    name: "Michael Anderson",
-    title: "Chief Executive Officer",
-    bio: "Michael brings over 30 years of construction industry experience, leading our company with a vision for innovation and excellence. His commitment to quality and client satisfaction has been the cornerstone of our success.",
-    image: "/professional-male-executive.jpg",
-  },
-  {
-    name: "Sarah Mitchell",
-    title: "Director of Operations",
-    bio: "Sarah oversees all operational aspects of our projects, ensuring seamless execution from planning to completion. Her expertise in project management and team coordination drives our operational excellence.",
-    image: "/professional-female-executive.png",
-  },
-  {
-    name: "David Chen",
-    title: "Senior Project Manager",
-    bio: "David specializes in large-scale commercial projects, bringing technical expertise and leadership to every build. His attention to detail and problem-solving skills ensure projects are delivered on time and within budget.",
+    name: "Saverio LoMonaco",
+    title: "Founder & Lead Waterproofing Specialist",
+    bio: "Saverio has spent decades protecting Toronto homes. He leads every project walkthrough, explains the process in plain language, and personally signs off on our 20-year waterproofing warranty.",
     image: "/professional-male-manager.jpg",
+  },
+  {
+    name: "Cornerstone Crew",
+    title: "Licensed Underpinning & Concrete Team",
+    bio: "Our trusted crew handles excavation, underpinning, and concrete finishing with craftsmanship you can see. Many of our specialists have worked with Saverio for over 10 years.",
+    image: "/construction-site-with-crane-and-workers.jpg",
+  },
+  {
+    name: "Homeowner Support",
+    title: "Scheduling & Client Care",
+    bio: "We keep you informed from permit applications to final clean-up. Expect reminders, photo updates, and quick answers to any questions while your project is underway.",
+    image: "/modern-office-interior-construction.jpg",
   },
 ]
 
@@ -45,32 +46,38 @@ export function OurTeam() {
 
       <div className="container mx-auto px-6 lg:px-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-6">
+          <ScrollReveal direction="up">
+            <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">
               <div className="h-px w-12 bg-foreground" />
               <h3 className="text-foreground font-medium tracking-[0.2em] text-sm uppercase">Our Team</h3>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 tracking-tight">
-              Invested in your success
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              As owners, we are more accountable to you and more invested in your success. Across all levels of our
-              organization, our experienced, innovative solution providers put our culture of ownership to work for you.
-              When you succeed, we succeed.
-            </p>
-            <Button
-              variant="outline"
-              size="lg"
-              className="group border-2 border-foreground hover:bg-foreground hover:text-background mb-12 bg-transparent"
+            </ScrollReveal>
+            <ScrollReveal
+              as="h2"
+              className="text-4xl md:text-5xl font-bold text-foreground mb-8 tracking-tight"
+              direction="up"
+              delay={80}
             >
-              <span className="flex items-center gap-2">
-                <div className="h-px w-8 bg-current" />
-                LEARN MORE
-              </span>
-            </Button>
+              Hands-on support from start to finish
+            </ScrollReveal>
+            <ScrollReveal as="p" className="text-muted-foreground text-lg leading-relaxed mb-8" direction="up" delay={140}>
+              Work directly with Saverio and the Cornerstone team. We show up when we say we will, keep your site tidy,
+              and stick around to make sure everything is performing the way it should.
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={200}>
+              <Button
+                variant="outline"
+                size="lg"
+                className="group border-2 border-foreground hover:bg-foreground hover:text-background mb-12 bg-transparent"
+              >
+                <span className="flex items-center gap-2">
+                  <div className="h-px w-8 bg-current" />
+                  MEET THE TEAM
+                </span>
+              </Button>
+            </ScrollReveal>
 
             {/* Team member card */}
-            <div className="bg-background p-8 border-l-4 border-secondary">
+            <ScrollReveal className="bg-background p-8 border-l-4 border-secondary" direction="up" delay={260}>
               <h4 className="text-3xl font-bold text-foreground mb-2">{currentMember.name}</h4>
               <p className="text-secondary text-lg font-medium mb-6">{currentMember.title}</p>
               <p className="text-muted-foreground leading-relaxed mb-8">{currentMember.bio}</p>
@@ -104,16 +111,17 @@ export function OurTeam() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
+            </ScrollReveal>
+          </ScrollReveal>
 
-          <div className="relative h-[700px]">
+          <ScrollReveal className="relative h-[700px]" direction="up" delay={120}>
             <img
+              key={currentMember.name}
               src={currentMember.image || "/placeholder.svg"}
               alt={currentMember.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-500 ease-out"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

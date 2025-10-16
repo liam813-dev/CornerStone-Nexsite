@@ -1,19 +1,22 @@
+"use client"
+
+import { ScrollReveal } from "@/components/scroll-reveal"
 import Link from "next/link"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="bg-foreground text-white py-16">
-      <div className="container mx-auto px-6 lg:px-12">
+      <ScrollReveal className="container mx-auto px-6 lg:px-12" direction="up">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <h3 className="text-2xl font-bold mb-4 tracking-wider">CONSTRUCTION</h3>
+          <ScrollReveal direction="up">
+            <h3 className="text-2xl font-bold mb-4 tracking-wider">CORNERSTONE WATERPROOFING</h3>
             <p className="text-white/70 font-light leading-relaxed">
-              Building excellence from the ground up with unparalleled craftsmanship and innovation.
+              Family-run waterproofing, underpinning, and foundation services trusted by Toronto homeowners.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div>
+          <ScrollReveal direction="up" delay={80}>
             <h4 className="font-semibold mb-4 tracking-wide uppercase text-sm">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -22,8 +25,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#portfolio" className="text-white/70 hover:text-secondary transition-colors font-light">
-                  Portfolio
+                <Link href="#projects" className="text-white/70 hover:text-secondary transition-colors font-light">
+                  Projects
                 </Link>
               </li>
               <li>
@@ -37,19 +40,19 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </ScrollReveal>
 
-          <div>
+          <ScrollReveal direction="up" delay={140}>
             <h4 className="font-semibold mb-4 tracking-wide uppercase text-sm">Services</h4>
             <ul className="space-y-3">
-              <li className="text-white/70 font-light">Commercial Construction</li>
-              <li className="text-white/70 font-light">Residential Projects</li>
-              <li className="text-white/70 font-light">Design-Build</li>
-              <li className="text-white/70 font-light">Renovations</li>
+              <li className="text-white/70 font-light">Waterproofing</li>
+              <li className="text-white/70 font-light">Underpinning & Basement Lowering</li>
+              <li className="text-white/70 font-light">Concrete Slabs & Walkways</li>
+              <li className="text-white/70 font-light">Foundation Repair</li>
             </ul>
-          </div>
+          </ScrollReveal>
 
-          <div>
+          <ScrollReveal direction="up" delay={200}>
             <h4 className="font-semibold mb-4 tracking-wide uppercase text-sm">Follow Us</h4>
             <div className="flex gap-4">
               <a href="#" className="bg-white/10 p-3 hover:bg-secondary transition-colors" aria-label="Facebook">
@@ -65,15 +68,15 @@ export function Footer() {
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center">
+        <ScrollReveal className="border-t border-white/10 pt-8 text-center" direction="up" delay={240}>
           <p className="text-white/60 font-light text-sm">
-            © 2025 Elite Construction. All rights reserved. Built with excellence.
+            © 2025 Cornerstone Waterproofing. All rights reserved.
           </p>
-        </div>
-      </div>
+        </ScrollReveal>
+      </ScrollReveal>
     </footer>
   )
 }

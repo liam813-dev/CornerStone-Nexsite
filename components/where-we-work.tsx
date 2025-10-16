@@ -1,71 +1,108 @@
 "use client"
 
-import { useState } from "react"
+import { ScrollReveal } from "@/components/scroll-reveal"
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 const locations = [
-  { id: "usa", label: "United States" },
-  { id: "canada", label: "Canada" },
-  { id: "caribbean", label: "Caribbean" },
-  { id: "australia", label: "Australia" },
+  {
+    name: "East York",
+    description:
+      "Head office and staging yard for waterproofing, sump pump installs, and drainage upgrades serving classic post-war homes.",
+  },
+  {
+    name: "City of Toronto",
+    description:
+      "From downtown Victorians to Midtown semis, we manage interior/exterior waterproofing, underpinning, and basement entrances across the city.",
+  },
+  {
+    name: "Greater Toronto Area",
+    description:
+      "Full foundation rehabilitation for homes in North York, York, Etobicoke, and York Region with 20-year waterproofing warranties.",
+  },
+  {
+    name: "Durham Region",
+    description:
+      "Emergency leak response, crack repair, and drainage upgrades for properties in Pickering, Ajax, Whitby, and Oshawa.",
+  },
+  {
+    name: "Peel Region",
+    description:
+      "Exterior waterproofing, sump pump retrofits, and concrete walkways for Mississauga, Brampton, and Caledon homeowners.",
+  },
 ]
 
 const stats = [
-  { number: "100%", label: "Employee Owned" },
-  { number: "500+", label: "Active Projects" },
+  { number: "Same-Day", label: "Site Assessments" },
+  { number: "24/7", label: "Emergency Support" },
 ]
 
 export function WhereWeWork() {
-  const [activeLocation, setActiveLocation] = useState("usa")
-
   return (
     <section id="where-we-work" className="py-24 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative">
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-6">
+        <ScrollReveal className="mb-16" direction="up">
+          <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">
             <div className="h-px w-12 bg-white" />
-            <h3 className="text-white font-medium tracking-[0.2em] text-sm uppercase">Where We Work</h3>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight max-w-4xl">
-            Helping you transform communities across the globe.
-          </h2>
-          <p className="text-white/80 text-lg max-w-3xl leading-relaxed">
-            No matter where or what you want to build, we mobilize the right resources and experts to drive value and
-            realize your project goals. From coast to coast in communities across the country, if you're ready, we're
-            ready.
-          </p>
-        </div>
+            <h3 className="text-white font-medium tracking-[0.2em] text-sm uppercase">Service Area</h3>
+          </ScrollReveal>
+          <ScrollReveal
+            as="h2"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight max-w-4xl"
+            direction="up"
+            delay={80}
+          >
+            Waterproofing trusted by homeowners across the GTA.
+          </ScrollReveal>
+          <ScrollReveal as="p" className="text-white/80 text-lg max-w-3xl leading-relaxed" direction="up" delay={140}>
+            From our base in East York we respond quickly across Toronto, Durham, York, and Peel. Whether it's a rowhouse
+            in the city or a heritage home in the suburbs, we bring the right crew, equipment, and solutions to keep your
+            foundation dry.
+          </ScrollReveal>
+        </ScrollReveal>
 
-        {/* Location tabs */}
+        {/* Location links (tabs-style) */}
         <div className="flex flex-wrap gap-8 mb-12">
-          {locations.map((location) => (
-            <button
-              key={location.id}
-              onClick={() => setActiveLocation(location.id)}
-              className={`text-lg font-medium pb-2 transition-colors relative ${
-                activeLocation === location.id ? "text-accent" : "text-white/60 hover:text-white"
-              }`}
-            >
-              {location.label}
-              {activeLocation === location.id && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent" />}
-            </button>
+          {locations.map((location, index) => (
+            <ScrollReveal key={location.name} direction="up" delay={index * 60}>
+              <a
+                href="#"
+                className="text-lg font-medium pb-2 transition-colors relative text-white/90 hover:text-white"
+                onClick={(e) => e.preventDefault()}
+              >
+                {location.name}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent" />
+              </a>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* Map and stats */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[400px] bg-slate-800/50 rounded-lg flex items-center justify-center">
-            <p className="text-white/40 text-lg">Map Visualization</p>
-          </div>
+          <ScrollReveal
+            className="relative h-[400px] bg-slate-800/50 rounded-lg flex flex-col items-center justify-center px-8 text-center gap-6 overflow-hidden"
+            direction="up"
+            delay={100}
+          >
+            <DotLottieReact
+              src="/animations/gta-service-area.lottie"
+              loop
+              autoplay
+              style={{ width: "100%", height: "100%" }}
+            />
+          </ScrollReveal>
 
           <div className="space-y-12">
             {stats.map((stat, index) => (
-              <div key={index}>
-                <div className="text-6xl md:text-7xl font-bold text-accent mb-3">{stat.number}</div>
-                <div className="text-white text-xl">{stat.label}</div>
-              </div>
+              <ScrollReveal key={stat.label} direction="left" delay={index * 120}>
+                <div>
+                  <div className="text-6xl md:text-7xl font-bold text-accent mb-3">{stat.number}</div>
+                  <div className="text-white text-xl">{stat.label}</div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
+
+        {/* Removed regional description cards per request */}
       </div>
     </section>
   )

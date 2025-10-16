@@ -15,6 +15,9 @@ try {
 import prettier from "eslint-config-prettier";
 
 export default [
+  {
+    ignores: ["**/.next/**", "**/node_modules/**", "**/dist/**", "**/out/**"]
+  },
   js.configs.recommended,
   // TypeScript rules (flat config helper not provided by plugin; compose manually)
   {

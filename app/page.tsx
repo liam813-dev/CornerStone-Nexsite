@@ -13,9 +13,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <WhatWeDo />
+      {/* Reordered per requested flow: Who We Are → Service Area → Services */}
       <WhoWeAre />
       <WhereWeWork />
+      <WhatWeDo />
       <FeaturedProjects />
       <OurTeam />
       <Contact />
