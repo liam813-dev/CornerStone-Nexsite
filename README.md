@@ -1,30 +1,86 @@
-# Construction website design
+# CornerStone Nexsite
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+High-impact marketing site for a premium construction company, built with Next.js App Router and Tailwind CSS. The project originated from a v0.app design and now targets production readiness with strong SEO, accessibility, and content marketing support for CornerStone Construction in Toronto, Ontario.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/liam813-devs-projects/v0-construction-website-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/RtrgmISLniX)
+## Project Overview
 
-## Overview
+- One-page marketing experience covering services, portfolio, team, and contact CTA
+- Responsive layout with rich imagery and hero animation
+- Built to integrate future CMS content, structured data, and localized experiences
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Tech Stack
 
-## Deployment
+- Framework: Next.js 15 (App Router, React 19)
+- Styling: Tailwind CSS v4, custom OKLCH design tokens
+- Components: shadcn/ui primitives, Lucide icons
+- Tooling: TypeScript, ESLint, Prettier, Vercel Analytics
 
-Your project is live at:
+## Prerequisites
 
-**[https://vercel.com/liam813-devs-projects/v0-construction-website-design](https://vercel.com/liam813-devs-projects/v0-construction-website-design)**
+- Node.js ≥ 20.11 (LTS recommended)
+- pnpm ≥ 9.0 (preferred) or npm ≥ 10.8 if pnpm is unavailable
+- macOS, Linux, or WSL2 shell environment
 
-## Build your app
+## Getting Started
 
-Continue building your app on:
+```bash
+# install dependencies
+pnpm install
 
-**[https://v0.app/chat/projects/RtrgmISLniX](https://v0.app/chat/projects/RtrgmISLniX)**
+# start the dev server
+pnpm dev
+```
 
-## How It Works
+Visit http://localhost:3000 to view the site.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Available Scripts
+
+| Script | Description |
+| --- | --- |
+| `pnpm dev` | Run Next.js in development mode with hot reloading |
+| `pnpm build` | Create a production build (`.next`) |
+| `pnpm start` | Start the production server (`next start`) |
+| `pnpm lint` | Run ESLint (fix build-blocking issues before deployment) |
+| `pnpm lint:fix` | Auto-fix lint issues where possible |
+| `pnpm format` | Format the codebase with Prettier |
+
+## Environment Variables
+
+Copy `.env.example` → `.env.local` and populate the values. At minimum provide:
+
+```
+NEXT_PUBLIC_SITE_URL=
+NEXT_PUBLIC_GA_ID=
+```
+
+See [docs/deployment.md](docs/deployment.md) for additional production variables (e.g. reCAPTCHA, CRM endpoints).
+
+## Folder Structure
+
+```
+app/                # App Router entry points, global layout, routing metadata
+components/         # UI primitives and page sections (split by domain soon)
+lib/                # Shared utilities (e.g. class name helpers)
+public/             # Static assets (images, icons, fonts)
+styles/             # Global Tailwind layers (legacy, slated for consolidation)
+docs/               # Process, deployment, and component documentation
+```
+
+Recommended next step is to adopt the scalable structure outlined in the main review (components grouped into `components/sections`, `components/ui`, `content`, `app/(marketing)`, etc.).
+
+## Build & Deployment
+
+1. `pnpm lint && pnpm build`
+2. Deploy `.next`, `public`, and configuration files to Vercel (default) or Netlify (see `docs/deployment.md`)
+3. Configure environment variables and analytics in your hosting dashboard
+
+CI/CD recommendations and branching strategy are documented in [docs/deployment.md](docs/deployment.md).
+
+## Contributing
+
+1. Create a feature branch from `main` (`feature/seo-schema`, `fix/contact-form`…)
+2. Keep commits small, message in imperative mood
+3. Add or update tests/docs relevant to the change
+4. Open a pull request with a concise summary and checkbox for testing
+
+See [docs/troubleshooting.md](docs/troubleshooting.md) for common pitfalls and fixes.
