@@ -18,6 +18,7 @@ export function WhoWeAre() {
       id="about"
       className="relative z-20 overflow-hidden bg-muted/30 py-16 lg:py-24 scroll-mt-[6.5rem]"
     >
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-20" />
       <div className="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <ScrollReveal className="lg:col-span-2" direction="up">

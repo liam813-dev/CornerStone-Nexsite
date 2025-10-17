@@ -5,7 +5,7 @@ import type { CompanyInfo, NavLink, Stat } from "@/lib/types"
  */
 export const companyInfo: CompanyInfo = {
   name: "Cornerstone Waterproofing",
-  tagline: "Keep Your Toronto Basement Dry & Strong – Family-Run Waterproofing & Foundation Experts",
+  tagline: "Toronto’s Family-Run Waterproofing & Foundation Repair Experts — Keeping Basements Dry & Strong",
   phone: "416-879-4593",
   email: undefined, // Add when available
   address: {
