@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
@@ -16,13 +17,13 @@ const teamMembers = [
     name: "Cornerstone Crew",
     title: "Licensed Underpinning & Concrete Team",
     bio: "Our trusted crew handles excavation, underpinning, and concrete finishing with craftsmanship you can see. Many of our specialists have worked with Saverio for over 10 years.",
-    image: "/construction-site-with-crane-and-workers.jpg",
+    image: "/construction-site-with-crane-and-workers.webp",
   },
   {
     name: "Homeowner Support",
     title: "Scheduling & Client Care",
     bio: "We keep you informed from permit applications to final clean-up. Expect reminders, photo updates, and quick answers to any questions while your project is underway.",
-    image: "/modern-office-interior-construction.jpg",
+    image: "/modern-office-interior-construction.webp",
   },
 ]
 
@@ -115,11 +116,13 @@ export function OurTeam() {
           </ScrollReveal>
 
           <ScrollReveal className="relative h-[700px]" direction="up" delay={120}>
-            <img
+            <Image
               key={currentMember.name}
               src={currentMember.image || "/placeholder.svg"}
               alt={currentMember.name}
-              className="w-full h-full object-cover transition-all duration-500 ease-out"
+              fill
+              className="object-cover transition-all duration-500 ease-out"
+              sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </ScrollReveal>
         </div>

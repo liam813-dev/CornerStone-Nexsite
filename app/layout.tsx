@@ -1,27 +1,47 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Inter, Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+  variable: "--font-body",
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
 })
 
 export const metadata: Metadata = {
-  title: "Elite Construction | Premium Commercial & Residential Building Services",
+  metadataBase: new URL("https://cornerstonewaterproofing.ca"),
+  title: "Cornerstone Waterproofing | Toronto Basement Experts",
   description:
-    "Award-winning construction company specializing in luxury commercial and residential projects. Expert craftsmanship, innovative design, and unparalleled quality. Transform your vision into reality.",
+    "Family-run waterproofing, underpinning, and foundation repair across Toronto with 20-year warranties and fast site assessments.",
   keywords:
-    "construction, luxury construction, commercial building, residential construction, premium building services, construction company",
-  authors: [{ name: "Elite Construction" }],
-  openGraph: {
-    title: "Elite Construction | Premium Building Services",
-    description: "Transform your vision into reality with award-winning construction expertise",
-    type: "website",
+    "basement waterproofing, Toronto waterproofing, underpinning, foundation repair, sump pump installation, Cornerstone Waterproofing",
+  authors: [{ name: "Cornerstone Waterproofing" }],
+  alternates: {
+    canonical: "/",
   },
+  openGraph: {
+    title: "Cornerstone Waterproofing | Toronto Basement Experts",
+    description:
+      "Family-run waterproofing, underpinning, and foundation repair across Toronto with 20-year warranties and fast site assessments.",
+    type: "website",
+    url: "https://cornerstonewaterproofing.ca",
+    siteName: "Cornerstone Waterproofing",
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cornerstone Waterproofing | Toronto Basement Experts",
+    description:
+      "Family-run waterproofing, underpinning, and foundation repair across Toronto with 20-year warranties and fast site assessments.",
+  },
+  referrer: "strict-origin-when-cross-origin",
   generator: "v0.app",
 }
 
@@ -32,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${montserrat.variable} font-body font-heading antialiased`}>
         {children}
         <Analytics />
       </body>

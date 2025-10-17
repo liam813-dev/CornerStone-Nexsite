@@ -78,7 +78,7 @@ export function WhereWeWork() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal
-            className="relative h-[400px] bg-slate-800/50 rounded-lg flex flex-col items-center justify-center px-8 text-center gap-6 overflow-hidden"
+            className="relative h-[400px] w-full bg-slate-800/50 rounded-lg overflow-hidden"
             direction="up"
             delay={100}
           >
@@ -86,7 +86,7 @@ export function WhereWeWork() {
               src="/animations/gta-service-area.lottie"
               loop
               autoplay
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%", display: "block" }}
             />
           </ScrollReveal>
 

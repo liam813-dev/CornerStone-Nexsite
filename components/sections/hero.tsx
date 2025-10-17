@@ -1,5 +1,7 @@
+import Image from "next/image"
 import Link from "next/link"
 
+import { ConstructWaveLines } from "@/components/shared/construct-wave-lines"
 import { heroContent } from "@/content/data/company"
 import { Button } from "@/components/ui/button"
 import { Facebook, Instagram, MessageCircle, Search, Twitter } from "lucide-react"
@@ -16,26 +18,30 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative scroll-mt-[6.5rem] overflow-hidden bg-background text-foreground"
+      className="relative scroll-mt-[6.5rem] bg-background text-foreground overflow-visible pb-[8.5rem] lg:pb-[17rem]"
     >
       <LandingHeader />
-      <div className="mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-6 pb-16 pt-[7rem] sm:px-10 lg:px-16 xl:px-24">
-        <div className="absolute right-6 top-20 text-xs font-semibold uppercase tracking-[0.45em] text-foreground/30 sm:right-10 lg:right-16 lg:text-sm xl:right-24">
+      <div className="mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-6 pb-16 pt-[24] sm:px-10 lg:px-16 xl:px-24">
+        <div className="absolute right-6 top-20 z-10 text-xs font-semibold uppercase tracking-[0.45em] text-foreground/30 sm:right-10 lg:right-16 lg:text-sm xl:right-24">
           {PROJECT_CODE}
         </div>
         <div className="grid flex-1 items-end gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] xl:gap-20">
-          <div className="space-y-10">
+          <div className="space-y-10 relative z-10">
             <div className="text-right text-5xl font-semibold tracking-[0.42em] text-foreground/20 lg:hidden">
               {PROJECT_CODE}
             </div>
-            <div className="space-y-8">
+            <div className="space-y-8 pt-24">
               <h1 className="text-[clamp(3rem,7vw,5.6rem)] font-semibold leading-[0.9] tracking-tight">
                 <span className="block">We Help You</span>
                 <span className="block lg:flex lg:items-baseline lg:gap-6">
-                  <span className="block lg:inline">Construct</span>
+                  <span className="block lg:inline-flex lg:flex-col lg:items-center lg:gap-3">
+                    <span className="block lg:inline">Reinforce</span>
+                    <ConstructWaveLines className="mt-4 h-10 w-[min(12rem,100%)] max-w-full sm:h-12 lg:mt-6 mx-auto" />
+                  </span>
                   <span className="block lg:inline lg:leading-[0.9]">with Confidence</span>
                 </span>
               </h1>
+
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {HERO_DESCRIPTION}
               </p>
@@ -44,9 +50,10 @@ export function Hero() {
                 <Button
                   asChild
                   size="lg"
+                  variant="cta"
                   className="rounded-none px-8 py-4 text-xs font-semibold uppercase tracking-[0.35em]"
                 >
-                  <a href="tel:14168794593">Call 416-879-4593</a>
+                  <a href="tel:4168794593">Call 416-879-4593</a>
                 </Button>
                 <Button
                   asChild
@@ -54,7 +61,7 @@ export function Hero() {
                   variant="outline"
                   className="rounded-none border-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.35em]"
                 >
-                  <Link href="#contact">Request a Site Visit</Link>
+                  <Link href="#contact">Get a Free Site Visit</Link>
                 </Button>
               </div>
             </div>
@@ -71,13 +78,19 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative flex items-start justify-end">
-            <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
-              <div className="aspect-[4/4.7] overflow-hidden border border-border/60 bg-secondary/10">
-                <img src={HERO_IMAGE_SRC} alt={HERO_IMAGE_ALT} className="h-full w-full object-cover" />
+          <div className="relative flex items-start justify-end lg:absolute lg:right-6 lg:top-[12rem] xl:right-24 lg:w-[35%] lg:max-w-[450px] lg:min-w-[380px] z-20">
+            <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none mt-10 sm:mt-12 lg:mt-0">
+              <div className="relative aspect-[3/4] lg:aspect-[3/4.2] overflow-visible border border-border/50 bg-secondary/10">
+                <Image
+                  src={HERO_IMAGE_SRC}
+                  alt={HERO_IMAGE_ALT}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 60vw, (max-width: 1024px) 40vw, 32vw"
+                  priority
+                />
               </div>
-              <div className="absolute -top-8 -right-10 hidden h-20 w-20 rotate-45 border border-border/70 lg:block" />
-              <div className="absolute -bottom-5 -left-5 hidden h-16 w-16 border border-border/60 lg:block" />
+              <div className="absolute -top-12 -right-12 h-[6.5rem] w-[6.5rem] rotate-45 border border-border/70 lg:h-28 lg:w-28 lg:-top-14 lg:-right-14" />
             </div>
           </div>
         </div>

@@ -124,3 +124,30 @@ export interface CompanyInfo {
   warranty: string
   social: SocialLink[]
 }
+
+/**
+ * Review and rating types
+ */
+export type ReviewServiceCategory = "waterproofing" | "underpinning" | "walkout" | "foundation" | "waterproofing-underpinning"
+
+export interface Review {
+  id: string
+  author: string
+  rating: 1 | 2 | 3 | 4 | 5
+  text: string
+  date: string // ISO 8601 format (YYYY-MM-DD)
+  serviceCategory: ReviewServiceCategory
+  verified?: boolean
+}
+
+export interface AggregateRating {
+  ratingValue: number // Average rating (e.g., 4.8)
+  reviewCount: number // Total number of reviews
+  bestRating?: number // Maximum possible rating (default: 5)
+  worstRating?: number // Minimum possible rating (default: 1)
+}
+
+export interface ReviewData {
+  reviews: Review[]
+  aggregateRating: AggregateRating
+}

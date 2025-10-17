@@ -4,7 +4,13 @@
       "Bash(pnpm lint:*)",
       "Bash(pnpm build:*)",
       "Bash(pnpm install:*)",
-      "Bash(pnpm next build:*)"
+      "Bash(pnpm next build:*)",
+      "Read(//Users/liam/Desktop/Screenshots/**)",
+      "Bash(pnpm add:*)",
+      "mcp__magic__21st_magic_component_builder",
+      "Bash(pnpm dev)",
+      "WebFetch(domain:www.homestars.com)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

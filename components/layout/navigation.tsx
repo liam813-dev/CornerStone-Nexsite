@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
@@ -31,10 +32,13 @@ export function Navigation() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-0">
-            <img
+            <Image
               src="/CornerStone-logo.svg"
               alt="Cornerstone Waterproofing"
+              width={160}
+              height={40}
               className="h-8 w-auto transition-opacity duration-300"
+              priority
             />
             <span className="sr-only">Cornerstone Waterproofing</span>
           </Link>

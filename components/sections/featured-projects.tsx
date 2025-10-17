@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
@@ -18,28 +19,28 @@ const projects = {
     location: "East York, ON",
     description:
       "Excavated the full side wall, installed new drainage board, weeping tile, and sump system. The homeowners now have a dry basement and peace of mind backed by our 20-year warranty.",
-    image: "/construction-site-with-crane-and-workers.jpg",
+    image: "/construction-site-with-crane-and-workers.webp",
   },
   underpinning: {
     title: "Basement Lowering & Bench Footing",
     location: "Leslieville, ON",
     description:
       "Completed a multi-stage underpinning project to add 18 inches of height, poured a new concrete slab, and prepped the space for a legal rental suite.",
-    image: "/modern-office-interior-construction.jpg",
+    image: "/modern-office-interior-construction.webp",
   },
   walkout: {
     title: "Walkout Entrance Installation",
     location: "North York, ON",
     description:
       "Created a code-compliant basement walkout with proper drainage, retaining walls, and concrete stairs to give a growing family a private entrance for their in-law suite.",
-    image: "/luxury-residential-home-construction.jpg",
+    image: "/luxury-residential-home-construction.webp",
   },
   foundation: {
     title: "Structural Crack Stabilization",
     location: "Scarborough, ON",
     description:
       "Repaired a bowing foundation wall with sectional reinforcement and waterproofing to stop active leaks and protect the home from further movement.",
-    image: "/modern-commercial-construction-building-exterior.jpg",
+    image: "/modern-commercial-construction-building-exterior.webp",
   },
 }
 
@@ -89,11 +90,14 @@ export function FeaturedProjects() {
         {/* Project showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal className="relative h-[600px]" direction="up" delay={100}>
-            <img
+            <Image
               key={activeCategory}
               src={projects[activeCategory as keyof typeof projects].image || "/placeholder.svg"}
               alt={projects[activeCategory as keyof typeof projects].title}
-              className="w-full h-full object-cover transition-all duration-500 ease-out"
+              fill
+              className="object-cover transition-all duration-500 ease-out"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority={activeCategory === "waterproofing"}
             />
           </ScrollReveal>
 

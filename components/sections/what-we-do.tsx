@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
@@ -26,37 +27,37 @@ const content = {
     title: "Gain headroom with expert underpinning",
     description:
       "We lower basements safely to create livable space and meet code. From permit drawings to bench footings and new concrete floors, our crew manages each stage so you can finish your basement with confidence and added value.",
-    image: "/modern-office-interior-construction.jpg",
+    image: "/modern-office-interior-construction.webp",
   },
   concrete: {
     title: "Durable slabs, steps, and walkways",
     description:
       "Whether you need to replace a cracked driveway, pour a new basement slab, or add custom walkways, we form and finish concrete that stands up to Toronto weather. We also handle benched footings for underpinning projects.",
-    image: "/luxury-residential-home-construction.jpg",
+    image: "/luxury-residential-home-construction.webp",
   },
   entrances: {
     title: "Separate entrances & walkouts",
     description:
       "We design and construct basement entrances that blend with your home, providing private access for rental suites or family members. From excavation to finished stairs and drainage, we deliver turnkey walkouts that stay watertight.",
-    image: "/modern-commercial-construction-building-exterior.jpg",
+    image: "/modern-commercial-construction-building-exterior.webp",
   },
   foundation: {
     title: "Targeted foundation wall repair",
     description:
       "Cracked or bowing foundation walls are stabilized with structural repairs in the affected sections. We assess the root cause, reinforce the wall, and seal the envelope so your home stays secure for the long term.",
-    image: "/construction-site-with-crane-and-workers.jpg",
+    image: "/construction-site-with-crane-and-workers.webp",
   },
   "new-foundations": {
     title: "New foundations for additions & builds",
     description:
       "Planning an addition or accessory structure? We form, pour, and waterproof new foundations that tie into existing homes or support brand-new builds, coordinating with your architect or builder every step of the way.",
-    image: "/modern-office-interior-construction.jpg",
+    image: "/modern-office-interior-construction.webp",
   },
   "floor-drains": {
     title: "Floor drain repair & upgrades",
     description:
       "Outdated clay drains are replaced with modern ABS/PVC systems that move water efficiently. We repair damaged sections, install new backwater valves, and ensure your drainage keeps pace with today’s plumbing standards.",
-    image: "/luxury-residential-home-construction.jpg",
+    image: "/luxury-residential-home-construction.webp",
   },
 }
 
@@ -64,11 +65,11 @@ export function WhatWeDo() {
   const [activeTab, setActiveTab] = useState("waterproofing")
 
   return (
-    <section id="services" className="relative overflow-hidden bg-background py-24 lg:py-32 scroll-mt-[6.5rem]">
+    <section id="services" className="relative overflow-hidden bg-background py-16 lg:py-24 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 transform rotate-45 translate-x-32 -translate-y-32" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative">
         <ScrollReveal className="mb-16" direction="up">
           <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">
             <div className="h-px w-12 bg-foreground" />
@@ -104,11 +105,14 @@ export function WhatWeDo() {
         {/* Content area */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal className="relative h-[500px] lg:h-[600px]" direction="up" delay={100}>
-            <img
+            <Image
               key={activeTab}
               src={content[activeTab as keyof typeof content].image || "/placeholder.svg"}
               alt={content[activeTab as keyof typeof content].title}
-              className="w-full h-full object-cover transition-all duration-500 ease-out"
+              fill
+              className="object-cover transition-all duration-500 ease-out"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority={activeTab === "waterproofing"}
             />
           </ScrollReveal>
 
@@ -120,17 +124,27 @@ export function WhatWeDo() {
               {content[activeTab as keyof typeof content].description}
             </p>
             <ScrollReveal direction="up" delay={40}>
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-foreground hover:bg-foreground hover:text-background bg-transparent"
-              >
-                <span className="flex items-center gap-2">
-                  <div className="h-px w-8 bg-current" />
-                  BOOK A SITE VISIT
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  asChild
+                  variant="cta"
+                  size="lg"
+                  className="rounded-none px-8 py-6 text-xs font-semibold uppercase tracking-[0.35em]"
+                >
+                  <a href="tel:4168794593">Call 416-879-4593</a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="group rounded-none border-2 border-foreground px-8 py-6 text-xs font-semibold uppercase tracking-[0.35em] hover:bg-foreground hover:text-background bg-transparent"
+                >
+                  <a href="#contact" className="flex items-center gap-2">
+                    BOOK A SITE VISIT
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </div>
             </ScrollReveal>
           </ScrollReveal>
         </div>

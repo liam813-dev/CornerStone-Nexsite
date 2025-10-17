@@ -32,13 +32,13 @@ export function ScrollReveal<T extends ElementType = "div">({
   delay = 0,
   duration = 700,
   direction = "up",
-  amount = 0.2,
+  amount = 0.1,
   once = true,
   ...rest
 }: ScrollRevealProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof ScrollRevealProps>) {
   const Component = as ?? ("div" as ElementType)
   const ref = useRef<HTMLElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {

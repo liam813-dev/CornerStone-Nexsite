@@ -5,7 +5,7 @@ import type { CompanyInfo, NavLink, Stat } from "@/lib/types"
  */
 export const companyInfo: CompanyInfo = {
   name: "Cornerstone Waterproofing",
-  tagline: "We Help You Construct with Confidence",
+  tagline: "Keep Your Toronto Basement Dry & Strong – Family-Run Waterproofing & Foundation Experts",
   phone: "416-879-4593",
   email: undefined, // Add when available
   address: {
@@ -30,7 +30,7 @@ export const navLinks: NavLink[] = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -60,13 +60,13 @@ export const aboutContent = {
  * Hero section content
  */
 export const heroContent = {
-  projectCode: "EST. 2010",
+  projectCode: "EST. 2004",
   subtitle: `${companyInfo.name} · ${companyInfo.address.city}`,
   heading: companyInfo.tagline,
   description:
-    "Waterproofing, underpinning, and structural reinforcement engineered for lasting protection across the GTA. Our crews stabilize new builds, heritage restorations, and complex commercial sites.",
+    "Protect your home with trusted waterproofing solutions built to last. Serving the GTA since 2004.",
   location: `${companyInfo.address.street} · ${companyInfo.address.city}, ${companyInfo.address.province}`,
-  image: "/construction-site-with-crane-and-workers.jpg",
+  image: "/construction-site-with-crane-and-workers.webp",
   imageAlt: "Cornerstone crew waterproofing a concrete foundation",
   callouts: {
     primary: "Responsive waterproofing diagnostics completed within 48 hours by our engineering team.",

@@ -55,17 +55,45 @@ export function Footer() {
           <ScrollReveal direction="up" delay={200}>
             <h4 className="font-semibold mb-4 tracking-wide uppercase text-sm">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="bg-white/10 p-3 hover:bg-secondary transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
+              <a
+                href="https://facebook.com"
+                className="bg-white/10 p-3 hover:bg-secondary transition-colors"
+                aria-label="Cornerstone Waterproofing on Facebook"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Facebook className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Follow Cornerstone Waterproofing on Facebook</span>
               </a>
-              <a href="#" className="bg-white/10 p-3 hover:bg-secondary transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
+              <a
+                href="https://instagram.com"
+                className="bg-white/10 p-3 hover:bg-secondary transition-colors"
+                aria-label="Cornerstone Waterproofing on Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Follow Cornerstone Waterproofing on Instagram</span>
               </a>
-              <a href="#" className="bg-white/10 p-3 hover:bg-secondary transition-colors" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
+              <a
+                href="https://linkedin.com"
+                className="bg-white/10 p-3 hover:bg-secondary transition-colors"
+                aria-label="Cornerstone Waterproofing on LinkedIn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Connect with Cornerstone Waterproofing on LinkedIn</span>
               </a>
-              <a href="#" className="bg-white/10 p-3 hover:bg-secondary transition-colors" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
+              <a
+                href="https://twitter.com"
+                className="bg-white/10 p-3 hover:bg-secondary transition-colors"
+                aria-label="Cornerstone Waterproofing on Twitter"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Twitter className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Follow Cornerstone Waterproofing on X (Twitter)</span>
               </a>
             </div>
           </ScrollReveal>
