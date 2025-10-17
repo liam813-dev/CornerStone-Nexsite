@@ -65,19 +65,19 @@ export function WhatWeDo() {
   const [activeTab, setActiveTab] = useState("waterproofing")
 
   return (
-    <section id="services" className="relative overflow-hidden bg-background py-16 lg:py-24 scroll-mt-[6.5rem]">
+    <section id="services" className="relative overflow-hidden bg-background py-12 sm:py-16 lg:py-24 scroll-mt-[6.5rem]">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 transform rotate-45 translate-x-32 -translate-y-32" />
 
-      <div className="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative">
-        <ScrollReveal className="mb-16" direction="up">
-          <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">
-            <div className="h-px w-12 bg-foreground" />
-            <h3 className="text-foreground font-medium tracking-[0.2em] text-sm uppercase">Services Provided</h3>
+      <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 relative">
+        <ScrollReveal className="mb-12 sm:mb-16" direction="up">
+          <ScrollReveal as="div" className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6" direction="right">
+            <div className="h-px w-8 sm:w-12 bg-foreground" />
+            <h3 className="text-foreground font-medium tracking-[0.18em] sm:tracking-[0.2em] text-xs sm:text-sm uppercase">Services Provided</h3>
           </ScrollReveal>
           <ScrollReveal
             as="h2"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-12 tracking-tight max-w-4xl"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-8 sm:mb-12 tracking-tight max-w-4xl leading-tight"
             direction="up"
             delay={80}
           >
@@ -85,13 +85,13 @@ export function WhatWeDo() {
           </ScrollReveal>
 
           {/* Category tabs */}
-          <div className="flex flex-wrap gap-8 border-b border-border pb-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 lg:gap-8 border-b border-border pb-3 sm:pb-4">
             {categories.map((category, index) => (
               <ScrollReveal key={category.id} as="div" direction="up" delay={index * 60}>
                 <button
                   onClick={() => setActiveTab(category.id)}
-                  className={`text-lg font-medium pb-2 transition-colors relative ${
-                    activeTab === category.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  className={`text-sm sm:text-base md:text-lg font-medium pb-2 transition-colors relative min-h-[44px] flex items-center ${
+                    activeTab === category.id ? "text-foreground" : "text-muted-foreground hover:text-foreground active:text-foreground"
                   }`}
                 >
                   {category.label}
@@ -103,33 +103,33 @@ export function WhatWeDo() {
         </ScrollReveal>
 
         {/* Content area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <ScrollReveal className="relative h-[500px] lg:h-[600px]" direction="up" delay={100}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <ScrollReveal className="relative aspect-[16/10] order-2 lg:order-1" direction="up" delay={100}>
             <Image
               key={activeTab}
               src={content[activeTab as keyof typeof content].image || "/placeholder.svg"}
               alt={content[activeTab as keyof typeof content].title}
               fill
               className="object-cover transition-all duration-500 ease-out"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
               priority={activeTab === "waterproofing"}
             />
           </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={160}>
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <ScrollReveal className="order-1 lg:order-2" direction="up" delay={160}>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               {content[activeTab as keyof typeof content].title}
             </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               {content[activeTab as keyof typeof content].description}
             </p>
             <ScrollReveal direction="up" delay={40}>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <Button
                   asChild
                   variant="cta"
                   size="lg"
-                  className="rounded-none px-8 py-6 text-xs font-semibold uppercase tracking-[0.35em]"
+                  className="w-full sm:w-auto rounded-none px-6 py-6 text-xs font-semibold uppercase tracking-[0.3em] sm:px-8 sm:tracking-[0.35em]"
                 >
                   <a href="tel:4168794593">Call 416-879-4593</a>
                 </Button>
@@ -137,9 +137,9 @@ export function WhatWeDo() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="group rounded-none border-2 border-foreground px-8 py-6 text-xs font-semibold uppercase tracking-[0.35em] hover:bg-foreground hover:text-background bg-transparent"
+                  className="group w-full sm:w-auto rounded-none border-2 border-foreground px-6 py-6 text-xs font-semibold uppercase tracking-[0.3em] hover:bg-foreground hover:text-background bg-transparent sm:px-8 sm:tracking-[0.35em]"
                 >
-                  <a href="#contact" className="flex items-center gap-2">
+                  <a href="#contact" className="flex items-center justify-center gap-2">
                     BOOK A SITE VISIT
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>

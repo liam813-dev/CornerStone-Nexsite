@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { StickyCTA } from "@/components/shared/sticky-cta"
 import "./globals.css"
 
 const inter = Inter({
@@ -23,6 +24,11 @@ export const metadata: Metadata = {
   keywords:
     "basement waterproofing, Toronto waterproofing, underpinning, foundation repair, sump pump installation, Cornerstone Waterproofing",
   authors: [{ name: "Cornerstone Waterproofing" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
   alternates: {
     canonical: "/",
   },
@@ -54,6 +60,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${montserrat.variable} font-body font-heading antialiased`}>
         {children}
+        <StickyCTA />
         <Analytics />
       </body>
     </html>

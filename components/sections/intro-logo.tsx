@@ -1,18 +1,23 @@
 import Image from "next/image"
 
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
+import { BlueprintGrid } from "@/components/shared/blueprint-grid"
 import { companyInfo } from "@/content/data/company"
+import { Users, MapPin, ShieldCheck } from "lucide-react"
 
 const highlightItems = [
   {
+    icon: Users,
     title: "Family-Run Crew",
     description: "Saverio LoMonaco and team on every project.",
   },
   {
+    icon: MapPin,
     title: "Based in Toronto",
     description: `Serving homeowners across the ${companyInfo.serviceArea}.`,
   },
   {
+    icon: ShieldCheck,
     title: "Long-Term Warranty",
     description: companyInfo.warranty,
   },
@@ -22,9 +27,12 @@ export function IntroLogo() {
   return (
     <section
       id="intro"
-      className="relative z-30 -mt-[10rem] bg-background py-12 text-foreground sm:-mt-[14rem] sm:py-16 lg:-mt-[18rem] lg:py-20"
+      className="relative z-30 bg-background pt-0 pb-12 text-foreground sm:pb-16 lg:pb-20 overflow-hidden"
     >
-      <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-6 text-center lg:px-12 xl:px-0">
+      {/* Animated blueprint grid background */}
+      <BlueprintGrid />
+
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-6 text-center lg:px-12 xl:px-0 relative z-10">
         <ScrollReveal className="flex flex-col items-center gap-6" direction="up">
           <Image
             src="/CornerStone-logo.svg"
@@ -37,16 +45,17 @@ export function IntroLogo() {
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/70">
             Family-run in Toronto since 2004
           </p>
-          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <h2 className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             {companyInfo.tagline}
-          </p>
+          </h2>
         </ScrollReveal>
 
         <div className="grid w-full gap-8 sm:grid-cols-3">
           {highlightItems.map((item, index) => (
             <ScrollReveal key={item.title} direction="up" delay={index * 80}>
-              <div className="flex h-full flex-col items-center gap-2 border border-border/60 bg-muted/20 px-6 py-8 text-center">
-                <span className="text-sm font-semibold uppercase tracking-[0.3em] text-foreground/80">
+              <div className={`flex h-full flex-col items-center gap-2 border border-foreground bg-transparent backdrop-blur-md px-6 py-8 text-center ${index === 1 ? 'scale-105' : ''}`}>
+                <item.icon className="h-8 w-8 text-foreground/80 mb-2" />
+                <span className="text-sm font-semibold tracking-[0.3em] text-foreground/80">
                   {item.title}
                 </span>
                 <span className="text-sm leading-relaxed text-muted-foreground sm:text-base">

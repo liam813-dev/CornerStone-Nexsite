@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
 import { Button } from "@/components/ui/button"
+import { Star } from "lucide-react"
 
 const stats = [
   { number: "20-Year", label: "Waterproofing Warranty" },
@@ -17,9 +18,6 @@ export function WhoWeAre() {
       id="about"
       className="relative z-20 overflow-hidden bg-muted/30 py-16 lg:py-24 scroll-mt-[6.5rem]"
     >
-      {/* Geometric accent */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10" />
-
       <div className="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <ScrollReveal className="lg:col-span-2" direction="up">
@@ -66,29 +64,42 @@ export function WhoWeAre() {
           <div className="space-y-8">
             {stats.map((stat, index) => (
               <ScrollReveal key={stat.label} direction="left" delay={index * 100}>
-                <div className="border-l-4 border-secondary pl-6">
+                <div className="border-l-4 border-cta pl-6">
                   <div className="text-5xl font-bold text-foreground mb-2">{stat.number}</div>
                   <div className="text-muted-foreground font-medium">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}
             <ScrollReveal direction="right" delay={stats.length * 100 + 160}>
-              <div className="relative overflow-hidden rounded-2xl border border-secondary/60 bg-background px-8 py-10 text-center shadow-[0_18px_30px_-24px_rgba(28,44,90,0.6)] animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
-                <div aria-hidden className="absolute inset-x-8 top-8 h-px bg-secondary/60" />
-                <div aria-hidden className="absolute inset-x-8 bottom-8 h-px bg-secondary/40" />
-                <div className="relative mx-auto flex w-full max-w-[10rem] items-center justify-center">
-                  <Image
-                    src="/CornerStone-logo.svg"
-                    alt="Cornerstone Waterproofing logo"
-                    width={210}
-                    height={95}
-                    className="h-auto w-full"
-                    priority={false}
-                  />
+              <div className="bg-muted/30 p-8 border-l-4 border-cta h-full flex flex-col">
+                {/* Rating and Date */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1" aria-label="5 out of 5 stars">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                  <span className="text-xs text-secondary font-medium tracking-wider uppercase">
+                    Verified Review
+                  </span>
                 </div>
-                <p className="mt-6 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-                  Trusted Cornerstone Crew
-                </p>
+
+                {/* Review Text */}
+                <blockquote className="text-muted-foreground text-lg leading-relaxed mb-6 flex-grow">
+                  "Cornerstone Waterproofing did an excellent job fixing a leak in our basement. The quality of their work surpassed our expectations and the cost was competitive."
+                </blockquote>
+
+                {/* Author and Date */}
+                <div className="flex items-center justify-between pt-4 border-t border-muted">
+                  <cite className="not-italic font-semibold text-foreground">HomeOwner</cite>
+                  <time dateTime="2024-08-28" className="text-sm text-muted-foreground">
+                    August 28, 2024
+                  </time>
+                </div>
               </div>
             </ScrollReveal>
           </div>

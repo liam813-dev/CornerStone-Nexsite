@@ -1,7 +1,6 @@
 "use client"
 
 import { ScrollReveal } from "@/components/shared/scroll-reveal"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 const locations = [
   {
@@ -82,12 +81,12 @@ export function WhereWeWork() {
             direction="up"
             delay={100}
           >
-            <DotLottieReact
-              src="/animations/gta-service-area.lottie"
-              loop
-              autoplay
-              style={{ width: "100%", height: "100%", display: "block" }}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44949.59387346223!2d-79.3741301625571!3d43.70086565129153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cc5f55fc8bd1%3A0x8f51a4fd0f97e031!2sEast%20York%2C%20ON!5e1!3m2!1sen!2sca!4v1760679161861!5m2!1sen!2sca" width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44949.59387346223!2d-79.3741301625571!3d43.70086565129153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON!5e1!3m2!1sen!2sca!4v1760679212982!5m2!1sen!2sca" width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d715392.7137038783!2d-79.48542356238679!3d44.01680439686417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d54e8394616735%3A0xcf5fb69e39e1e9de!2sRegional%20Municipality%20of%20Durham%2C%20ON!5e1!3m2!1sen!2sca!4v1760679533731!5m2!1sen!2sca" width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d715392.7137038783!2d-79.48542356238679!3d44.01680439686417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3c30c9eb87ab%3A0x3bec33bf3e68e6a3!2sRegional%20Municipality%20of%20Peel%2C%20ON!5e1!3m2!1sen!2sca!4v1760679559670!5m2!1sen!2sca" width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </ScrollReveal>
 
           <div className="space-y-12">

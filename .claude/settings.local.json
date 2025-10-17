@@ -10,7 +10,8 @@
       "mcp__magic__21st_magic_component_builder",
       "Bash(pnpm dev)",
       "WebFetch(domain:www.homestars.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": []

@@ -6,8 +6,8 @@ import { FeaturedReviews } from "@/components/sections/featured-reviews"
 import { OurTeam } from "@/components/sections/our-team"
 import { Contact } from "@/components/sections/contact"
 import { Footer } from "@/components/layout/footer"
-import { StickyCTA } from "@/components/shared/sticky-cta"
 import { IntroLogo } from "@/components/sections/intro-logo"
+import { StickyCTA } from "@/components/shared/sticky-cta"
 
 export default function Home() {
   return (

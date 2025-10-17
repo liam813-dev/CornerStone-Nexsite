@@ -64,10 +64,10 @@ export const heroContent = {
   subtitle: `${companyInfo.name} · ${companyInfo.address.city}`,
   heading: companyInfo.tagline,
   description:
-    "Protect your home with trusted waterproofing solutions built to last. Serving the GTA since 2004.",
+    "Protect your Toronto home with trusted waterproofing solutions built to last. Our expert team specializes in basement waterproofing, foundation repair, and drainage systems that keep your property dry and structurally sound. Serving homeowners across the GTA since 2004, we deliver comprehensive waterproofing services backed by a 20-year warranty. From emergency leak repairs to complete foundation upgrades, Cornerstone Waterproofing provides the lasting protection your home deserves.",
   location: `${companyInfo.address.street} · ${companyInfo.address.city}, ${companyInfo.address.province}`,
-  image: "/construction-site-with-crane-and-workers.webp",
-  imageAlt: "Cornerstone crew waterproofing a concrete foundation",
+  image: "/Landing-cornerstone.webp",
+  imageAlt: "Cornerstone Waterproofing team on site",
   callouts: {
     primary: "Responsive waterproofing diagnostics completed within 48 hours by our engineering team.",
     website: "useful@cornerstonewaterproofing.ca",

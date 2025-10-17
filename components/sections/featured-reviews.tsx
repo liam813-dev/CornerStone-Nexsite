@@ -113,9 +113,6 @@ export function FeaturedReviews() {
       />
 
       <section id="reviews" className="relative overflow-hidden bg-background py-24 lg:py-32 scroll-mt-[6.5rem]">
-        {/* Geometric accent */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 transform -translate-y-48 translate-x-48" />
-
         <div className="container mx-auto px-6 lg:px-12 relative">
           <div className="mb-16">
             <ScrollReveal as="div" className="flex items-center gap-4 mb-6" direction="right">

@@ -24,9 +24,9 @@
   --border: oklch(0.82 0.012 85);
   --input: oklch(0.88 0.008 85);
   --ring: oklch(0.15 0 0);
-  --cta: oklch(0.25 0.05 240);
+  --cta: oklch(0.7 0.1 228.5);
   --cta-foreground: oklch(0.98 0.005 85);
-  --cta-hover: oklch(0.20 0.06 240);
+  --cta-hover: oklch(0.65 0.1 228.5);
   --chart-1: oklch(0.35 0.08 240);
   --chart-2: oklch(0.58 0.14 195);
   --chart-3: oklch(0.45 0.12 180);
@@ -133,6 +133,28 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom breakpoint for extra small devices */
+  @media (min-width: 375px) {
+    .xs\:text-\[2\.75rem\] {
+      font-size: 2.75rem;
+    }
+    .xs\:max-w-\[300px\] {
+      max-width: 300px;
+    }
+    .xs\:-top-10 {
+      top: -2.5rem;
+    }
+    .xs\:-right-10 {
+      right: -2.5rem;
+    }
+    .xs\:h-24 {
+      height: 6rem;
+    }
+    .xs\:w-24 {
+      width: 6rem;
+    }
+  }
 }
 
 /* Custom animations for hero section */
@@ -172,4 +194,48 @@
 .animation-delay-400 {
   animation-delay: 0.4s;
   animation-fill-mode: backwards;
+}
+
+/* Blueprint grid animations */
+@keyframes blueprint-line-fade {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes intersection-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Blueprint grid line styles */
+.blueprint-line {
+  animation: blueprint-line-fade 8s ease-in-out infinite;
+}
+
+.blueprint-line-muted {
+  stroke: oklch(0.35 0.01 0 / 0.25);
+}
+
+.blueprint-line-border {
+  stroke: oklch(0.82 0.012 85 / 0.3);
+}
+
+.blueprint-line-accent {
+  stroke: oklch(0.7 0.1 228.5 / 0.35);
+}
+
+/* Intersection dot style */
+.intersection-dot {
+  fill: oklch(0.7 0.1 228.5 / 0.5);
+  animation: intersection-pulse 6s ease-in-out infinite;
 }
